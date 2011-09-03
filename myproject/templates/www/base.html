@@ -1,0 +1,42 @@
+{% extends "template.html" %}
+
+{% block headjs %}
+{% comment %}
+Make sure you put in your own Google API key here.
+{% endcomment %}
+<script type="text/javascript" src="https://www.google.com/jsapi?key=""></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+{% endblock headjs %}
+
+{% block header %}
+<div id="topbar">
+	<div id="login">
+		{% if user.is_authenticated %}
+		<p>Welcome to MyProject! {{ user.email }}. <a href="{% url django.contrib.auth.views.logout %}">Sign out</a></p>
+		{% else %}
+		{% block loginlink %}
+		<p><a href="{% url django.contrib.auth.views.login %}?next={% firstof request.POST.next request.GET.next request.path %}">Sign in</a></p>
+		{% endblock loginlink %}
+		{% endif %}
+	</div>
+
+	<div id="logo">
+		<a href="http://www.example.com/" title="MyProject home"><img src="{{ STATIC_URL }}img/myproject-logo.png" alt="MyProject" /></a>
+	</div>
+</div>
+
+{% block nav %}
+<nav>
+<ul>
+	<li><a href="{% url home %}">Home</a></li>
+</ul>
+</nav>
+{% block subnav %}
+{% endblock subnav %}
+{% endblock nav %}
+
+{% endblock header %}
+
+{% block footer %}
+<p>MyProject is Copyright 2011.</p>
+{% endblock footer %}

@@ -89,7 +89,9 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '5x4wk@_-bqy+_px!7%c#ec!-y1_dc@dkj26v@fun(!!%_#va7_'
+SECRET_KEY = ''
+if not len(SECRET_KEY):
+    raise AssertionError("Please set a secret key")
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (

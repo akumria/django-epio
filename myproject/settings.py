@@ -1,5 +1,9 @@
 # Django settings for myproject project.
 
+import os
+
+CURRENT_DIR = os.path.dirname(__file__)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 

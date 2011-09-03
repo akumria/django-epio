@@ -143,6 +143,9 @@ INSTALLED_APPS = (
 
     # 3rd-party
     'south',
+
+    # my stuff
+    'world',
 )
 
 # A sample logging configuration. The only tangible logging

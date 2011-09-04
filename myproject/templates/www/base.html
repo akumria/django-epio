@@ -11,6 +11,8 @@ Make sure you put in your own Google API key here.
 {% block header %}
 <div id="topbar">
 	<div id="login">
+		{% comment %}
+		<!-- once you have enabled authentication, this becomes handy -->
 		{% if user.is_authenticated %}
 		<p>Welcome to MyProject! {{ user.email }}. <a href="{% url django.contrib.auth.views.logout %}">Sign out</a></p>
 		{% else %}
@@ -18,6 +20,7 @@ Make sure you put in your own Google API key here.
 		<p><a href="{% url django.contrib.auth.views.login %}?next={% firstof request.POST.next request.GET.next request.path %}">Sign in</a></p>
 		{% endblock loginlink %}
 		{% endif %}
+		{% endcomment %}
 	</div>
 
 	<div id="logo">

@@ -1,0 +1,25 @@
+
+This is a minimal Django project setup to use ep.io.
+
+You will need to generate an epio application name
+and store it in 'myproject/.epio-app'.
+
+$ print -n "appname" > myproject/.epio-app
+
+Also you will need to generate a SECRET_KEY for your
+Django project and store it in myproject/settings.py
+
+https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
+
+You can do it via Python by following the instruction here:
+
+http://mylesbraithwaite.com/journal/2007/10/secret-key/
+
+Or you can do it online.
+
+http://www.miniwebtool.com/django-secret-key-generator/
+
+Have fun!
+
+Cheers,
+Anand

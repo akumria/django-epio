@@ -1,3 +1,5 @@
+{% load static %}
+{% get_static_prefix as STATIC_URL %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -5,6 +7,7 @@
 		<meta name="description" content="{% block metadescription %}{% endblock metadescription %}" />
 		<meta name="keywords" content="{% block metakeywords %}{% endblock metakeywords %}" />
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/default.css" />
+		<link rel="shortcut icon" href="{{ STATIC_URL }}img/icon.png" />
 		{% block headstyle %}{% endblock headstyle %}
 		{% block headjs %}{% endblock headjs %}
 		{% block headextra %}{% endblock headextra %}

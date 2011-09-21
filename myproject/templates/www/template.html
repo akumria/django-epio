@@ -4,8 +4,12 @@
 <html>
 	<head>
 		<title>{% block title %}MyProject{% endblock %}</title>
+		{% if metadescription %}
 		<meta name="description" content="{% block metadescription %}{% endblock metadescription %}" />
+		{% endif %}
+		{% if metakeywords %}
 		<meta name="keywords" content="{% block metakeywords %}{% endblock metakeywords %}" />
+		{% endif %}
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/default.css" />
 		<link rel="shortcut icon" href="{{ STATIC_URL }}img/icon.png" />
 		{% block headstyle %}{% endblock headstyle %}

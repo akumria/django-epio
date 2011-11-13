@@ -21,3 +21,17 @@ DATABASES = {
         "NAME": config['postgres']['database'],
     },
 }
+
+CELERY_RESULT_BACKEND = "redis"
+CELERY_REDIS_DB = 0
+REDIS_HOST = CELERY_REDIS_HOST = config['redis']['host']
+REDIS_PORT = CELERY_REDIS_PORT = int(config['redis']['port'])
+REDIS_PASSWORD = CELERY_REDIS_PASSWORD = config['redis']['password']
+REDIS_CONNECT_RETRY = True
+
+BROKER_BACKEND = "redis"
+BROKER_TRANSPORT = "redis"
+BROKER_HOST = config['redis']['host']
+BROKER_PORT = int(config['redis']['port'])
+BROKER_PASSWORD = config['redis']['password']
+BROKER_VHOST = 0

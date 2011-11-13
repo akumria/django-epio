@@ -4,3 +4,4 @@ psycopg2
 epio
 django-ses==0.2
 django-celery>=2.3
+redis>=2.4.4

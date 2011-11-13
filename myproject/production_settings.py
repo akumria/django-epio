@@ -22,6 +22,7 @@ DATABASES = {
     },
 }
 
+CELERY_ALWAYS_EAGER = False
 CELERY_RESULT_BACKEND = "redis"
 CELERY_REDIS_DB = 0
 REDIS_HOST = CELERY_REDIS_HOST = config['redis']['host']
